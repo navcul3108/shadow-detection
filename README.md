@@ -1,1 +1,1 @@
-# shadow-detection
+# Shadow detection
