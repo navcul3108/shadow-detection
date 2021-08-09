@@ -1,0 +1,6 @@
+Component-Detection/faster_rcnn*
+Component-Detection/dataset/test/*.jpg
+Component-Detection/dataset/train/*.jpg
+Component-Detection/dataset/valid/*.jpg
+Shadow-Detection/canny.py
+Shadow-Detection/color-filter.py
