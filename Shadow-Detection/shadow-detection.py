@@ -81,7 +81,10 @@ for file in os.listdir(input_folder):
     del dilated_img2
 
     contours, arch = cv2.findContours(dilated_img, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    contours = list(filter(lambda cnt: isValidContour(cnt, min_area), contours))    
+    valid_contours = list(filter(lambda cnt: isValidContour(cnt, min_area), contours))    
+    if len(valid_contours)<2:
+        print(f"{file_name} doesn't contain shadow")
+        continue
 
     debug_img = cv2.resize(np.hstack((original_canny, canny, dilated_img)), (0, 0), fx=3, fy=3, interpolation=cv2.INTER_LINEAR)
     cv2.imwrite(f"debug/{folder_name}/{file_name}-debug.png", debug_img)
@@ -89,9 +92,11 @@ for file in os.listdir(input_folder):
 
     contours_img = img.copy()
     bounding_box_img = img.copy()
-    for cnt_idx in range(len(contours)):
-        cv2.drawContours(contours_img, contours, cnt_idx, COLORS[cnt_idx%6][::-1], thickness=1)
-        cv2.rectangle(bounding_box_img, cv2.boundingRect(contours[cnt_idx]), COLORS[cnt_idx%6][::-1], thickness=1)
+    for cnt_idx in range(len(valid_contours)):
+        cv2.drawContours(contours_img, valid_contours, cnt_idx, COLORS[cnt_idx%6][::-1], thickness=1)
+        cv2.rectangle(bounding_box_img, cv2.boundingRect(valid_contours[cnt_idx]), COLORS[cnt_idx%6][::-1], thickness=1)
     color_img = cv2.resize(np.hstack((img, all_contour_img, contours_img, bounding_box_img)), (0,0), fx=3, fy=3, interpolation=cv2.INTER_LINEAR)
     cv2.imwrite(f"debug/{folder_name}/{file_name}-output.png", color_img)
     print("Output image is located at:", f"debug/{folder_name}/{file_name}-output.png")
+
+    
