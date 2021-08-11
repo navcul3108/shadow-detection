@@ -13,6 +13,7 @@ Install dependency:
 `
 pip install pyyaml==5.1
 `
+
 Install **torch**, there are 2 options: CPU and GPU:
 ```
 % For torch+GPU version
@@ -31,6 +32,7 @@ You should check whether detectron2 work properly
 `
 python3 -c "import detectron2"
 `
+
 For more information about installation, visit [this link](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 Download the model file that I trained previously:
 ```
@@ -38,7 +40,7 @@ pip3 install gdown
 mkdir Component-Detection/faster_rcnn_R_50_FPN_3x
 gdown https://drive.google.com/uc?export=download&id=1GVdo4174Mn-8wuLFRbVGng3RA4hZ4IEC -O Component-Detection/faster_rcnn_R_50_FPN_3x/model_final.path
 ```
-Training uses [this dataset](https://public.roboflow.com/object-detection/website-screenshots)
+Training process uses [this dataset](https://public.roboflow.com/object-detection/website-screenshots)
 
 Put your image into Component-Detection/input folder, then run the command:
 ```
