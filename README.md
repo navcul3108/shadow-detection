@@ -1,5 +1,5 @@
 # Shadow detection
-Author: Giang Van Luc
+
 ## 1.Introduction
 This repository is for Sofware Engineering(extra) assignment. The requirement is to detect shadow offset of a web component like button, div...  
 
