@@ -3,3 +3,5 @@ Component-Detection/dataset/test/*.jpg
 Component-Detection/dataset/train/*.jpg
 Component-Detection/dataset/valid/*.jpg
 Shadow-Detection/debug
+Component-Detection/output
+.gitignore
