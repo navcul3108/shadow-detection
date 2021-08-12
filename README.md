@@ -34,6 +34,7 @@ python3 -c "import detectron2"
 ```
 
 For more information about installation, visit [this link](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
+
 Download the model file that I trained previously:
 ```
 pip3 install gdown
@@ -49,7 +50,7 @@ python3 component-detection.py --input <you-image-name>
 ```
 Output will be at Component-Detection/ouput folder:
 
-* All components detected: \<your-image-name\>-output.\<format\>
+* All detected components: \<your-image-name\>-output.\<format\>
 * Button only: \<your-image-name\>-button.\<format\>
 * Cropped boxes folder: output/\<your-image-name\>/
 
