@@ -10,9 +10,9 @@ There are 2 main steps in order to detect shadow:
 2. Take images labeled "button" from previous step and detect shadow on it
 ## 2. Component detection
 Install dependency:
-`
+```
 pip install pyyaml==5.1
-`
+```
 
 Install **torch**, there are 2 options: CPU and GPU:
 ```
@@ -29,9 +29,9 @@ pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu111
 pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.8/index.html
 ```
 You should check whether detectron2 work properly
-`
+```
 python3 -c "import detectron2"
-`
+```
 
 For more information about installation, visit [this link](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 Download the model file that I trained previously:
